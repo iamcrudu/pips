@@ -5,7 +5,10 @@ on:
   pull_request:
     branches: [ main, master, develop, ]
   workflow_dispatch:
-  
+ 
+env:
+    POLARIS_SERVER_URL: https://cdev.altair.synopsys.com
+    
 jobs:
   build:
     runs-on: [ ubuntu-latest ]
