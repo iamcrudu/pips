@@ -1,11 +1,9 @@
-# example workflow for Polaris scans using the Synopsys Action
-# https://github.com/marketplace/actions/synopsys-action
-name: polaris 
+name: CI-Polaris-Basic 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches: [ main, master, develop, ]
   pull_request:
-    branches: [ main, master, develop ]
+    branches: [ main, master, develop, ]
   workflow_dispatch:
   
 jobs:
@@ -29,3 +27,10 @@ jobs:
           ### PULL REQUEST COMMENTS: Uncomment below to enable
           # polaris_prComment_enabled: true 
           # github_token: ${{ secrets.GITHUB_TOKEN }} # Required when PR comments is enabled
+
+          ### SARIF report parameters
+          #polaris_reports_sarif_create: true
+          #polaris_upload_sarif_report: true
+          
+          ### Signature scan
+          polaris_test_sca_type: "SCA-SIGNATURE"
